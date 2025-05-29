@@ -1,0 +1,196 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #f0f2f5;
+  color: #333;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode {
+  background-color: #121212;
+  color: #fff;
+}
+
+.app-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 220px;
+  background-color: #282c34;
+  color: #fff;
+  padding: 20px;
+  flex-shrink: 0;
+}
+
+.sidebar .logo {
+  font-size: 24px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.sidebar nav {
+  display: flex;
+  flex-direction: column;
+}
+
+.tab-button {
+  background: none;
+  border: none;
+  color: inherit;
+  text-align: left;
+  padding: 12px 10px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background 0.3s;
+}
+
+.tab-button:hover,
+.tab-button.active {
+  background-color: #3d414a;
+}
+
+/* Main Content */
+.main-content {
+  flex: 1;
+  padding: 30px;
+  overflow-y: auto;
+}
+
+.search-container {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+#cityInput {
+  flex: 1;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+#searchBtn {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #0077ff;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+#searchBtn:hover {
+  background-color: #005fcc;
+}
+
+.weather-display {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.current-weather {
+  text-align: center;
+}
+
+.current-weather img {
+  width: 80px;
+  height: 80px;
+}
+
+.forecast {
+  margin-top: 20px;
+}
+
+.forecast h3 {
+  margin-bottom: 10px;
+}
+
+#forecastContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.forecast-day {
+  background-color: #ffffff;
+  padding: 15px;
+  border-radius: 12px;
+  text-align: center;
+  width: 120px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  transition: background-color 0.3s;
+}
+
+.dark-mode .forecast-day {
+  background-color: #1e1e1e;
+  color: #fff;
+}
+
+.forecast-day img {
+  width: 50px;
+  height: 50px;
+}
+
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+/* Cities */
+#savedCitiesList {
+  list-style: none;
+  margin-top: 15px;
+}
+
+#savedCitiesList li {
+  background-color: #efefef;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+
+.dark-mode #savedCitiesList li {
+  background-color: #2a2a2a;
+}
+
+/* Settings */
+#settings label {
+  display: block;
+  margin-top: 15px;
+  font-size: 16px;
+}
+
+@media screen and (max-width: 768px) {
+  .app-container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+  }
+
+  .main-content {
+    padding: 20px;
+  }
+
+  #forecastContainer {
+    justify-content: center;
+  }
+}

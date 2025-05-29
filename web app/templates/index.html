@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weather Dashboard</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <div class="app-container">
+    <aside class="sidebar">
+      <h1 class="logo">🌦 Weatherly</h1>
+      <nav>
+        <button class="tab-button active" data-tab="weather">🌦 Weather</button>
+        <button class="tab-button" data-tab="cities">🏙 Cities</button>
+        <button class="tab-button" data-tab="settings">⚙ Settings</button>
+      </nav>
+    </aside>
+
+    <main class="main-content">
+      <!-- Weather Section -->
+      <section id="weather" class="tab-content active">
+        <div class="search-container">
+          <input type="text" id="cityInput" placeholder="Enter city name" />
+          <button id="searchBtn">Search</button>
+        </div>
+        <div class="weather-display">
+          <div class="current-weather">
+            <h2 id="cityName"></h2>
+            <img id="weatherIcon" src="" alt="Weather Icon" />
+            <p id="temperature"></p>
+            <p id="description"></p>
+            <p id="humidity"></p>
+            <p id="windSpeed"></p>
+          </div>
+          <div class="forecast">
+            <h3>5-Day Forecast</h3>
+            <div id="forecastContainer"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Cities Section -->
+      <section id="cities" class="tab-content">
+        <h2>Saved Cities</h2>
+        <ul id="savedCitiesList"></ul>
+      </section>
+
+      <!-- Settings Section -->
+      <section id="settings" class="tab-content">
+        <h2>Settings</h2>
+        <label>
+          <input type="checkbox" id="darkModeToggle" />
+          Enable Dark Mode
+        </label>
+        <label>
+          <select id="unitSelect">
+            <option value="metric">Celsius</option>
+            <option value="imperial">Fahrenheit</option>
+          </select>
+        </label>
+      </section>
+    </main>
+  </div>
+
+  <script src="/static/script.js"></script>
+</body>
+</html>
